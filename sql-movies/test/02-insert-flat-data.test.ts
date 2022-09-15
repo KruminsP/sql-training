@@ -30,18 +30,34 @@ const insertActors = (actors: string[]) => {
 };
 
 const insertKeywords = (keywords: string[]) => {
+  // return (
+  //   `insert into keywords (keyword) values` +
+  //   keywords.map(keyword => `('${escape(keyword)}')`).join(",")
+  // );
   throw new Error(`todo`);
 };
 
 const insertDirectors = (directors: string[]) => {
+  // return (
+  //   `insert into directors (full_name) values` +
+  //   directors.map(director => `('${escape(director)}')`).join(",")
+  // );
   throw new Error(`todo`);
 };
 
 const insertGenres = (genres: string[]) => {
+  // return (
+  //   `insert into genres (genre) values` +
+  //   genres.map(genre => `('${escape(genre)}')`).join(",")
+  // );
   throw new Error(`todo`);
 };
 
 const insertProductionCompanies = (companies: string[]) => {
+  // return (
+  //   `insert into production_companies (company_name) values` +
+  //   companies.map(company => `('${escape(company)}')`).join(",")
+  // );
   throw new Error(`todo`);
 };
 

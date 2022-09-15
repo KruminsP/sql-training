@@ -1,5 +1,7 @@
+import { ACTORS } from "../table-names";
+
 export const selectActorByName = (fullName: string): string => {
-  throw new Error(`todo`);
+  return `select full_name from actors where full_name = '${fullName}'`;
 };
 
 export const selectKeyword = (keyword: string): string => {
@@ -78,5 +80,5 @@ export const selectProductionCompaniesByMovieId = (movieId: number): string => {
  * select count as c, because an object is returned and expected property name is c
  */
 export const selectCount = (table: string): string => {
-  throw new Error(`todo`);
+  return `select count() as c from ${table}`
 };
