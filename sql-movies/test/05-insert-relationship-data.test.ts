@@ -32,6 +32,7 @@ const insertMovieGenres = (
   genres: string[],
   genreRows: GenreRow[]
 ): string => {
+  return `insert into ${genreRows}`
   throw new Error(`todo`);
 };
 
