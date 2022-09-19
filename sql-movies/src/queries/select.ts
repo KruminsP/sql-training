@@ -1,55 +1,55 @@
 import { ACTORS } from "../table-names";
 
 export const selectActorByName = (fullName: string): string => {
-  return `select full_name from actors where full_name = '${fullName}'`;
+  return `select * from actors where full_name = '${fullName}'`;
 };
 
 export const selectKeyword = (keyword: string): string => {
-  return `select keyword from keywords where keyword = '${keyword}'`;
+  return `select * from keywords where keyword = '${keyword}'`;
 };
 
 export const selectDirector = (director: string): string => {
-  return `select full_name from directors where full_name = '${director}'`;
+  return `select * from directors where full_name = '${director}'`;
 };
 
 export const selectGenre = (genre: string): string => {
-  return `select genre from genres where genre = '${genre}'`;
+  return `select * from genres where genre = '${genre}'`;
 };
 
 export const selectProductionCompany = (company: string): string => {
-  return `select company_name from production_companies where company_name = '${company}'`;
+  return `select * from production_companies where company_name = '${company}'`;
 };
 
 export const selectMovieById = (id: number): string => {
-  return `select id from movies where id = ${id}`
+  return `select * from movies where id = ${id}`
 };
 
 export const selectGenreById = (id: number): string => {
-  return `select id from genres where id = ${id}`
+  return `select * from genres where id = ${id}`
 };
 
 export const selectDirectorById = (id: number): string => {
-  return `select id from directors where id = ${id}`
+  return `select * from directors where id = ${id}`
 };
 
 export const selectActorById = (id: number): string => {
-  return `select id from actors where id = ${id}`
+  return `select * from actors where id = ${id}`
 };
 
 export const selectKeywordById = (id: number): string => {
-  return `select id from keywords where id = ${id}`
+  return `select * from keywords where id = ${id}`
 };
 
 export const selectProductionCompanyById = (id: number): string => {
-  return `select id from keywords where id = ${id}`
+  return `select * from keywords where id = ${id}`
 };
 
 export const selectMovie = (imdbId: string): string => {
-  return `select original_title from movies where imdb_id = '${imdbId}'`;
+  return `select * from movies where imdb_id = '${imdbId}'`;
 };
 
 export const selectMovieId = (imdbId: string): string => {
-  return `select id from movies where imdb_id = '${imdbId}'`;
+  return `select * from movies where imdb_id = '${imdbId}'`;
 };
 
 export const selectRatingsByUserID = (userId: number): string => {
