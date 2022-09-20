@@ -28,5 +28,4 @@ export const selectReviewByAppIdAuthor = (appId: number, author: string): string
 
 export const selectColumnFromTable = (columnName: string, tableName: string): string => {
   return `select '${columnName}' from '${tableName}'`;
-  throw new Error(`todo`);
 };
