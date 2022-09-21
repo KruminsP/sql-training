@@ -34,6 +34,8 @@ const CREATE_APPS_CATEGORIES_TABLE = `create table ${APPS_CATEGORIES} (
     app_id integer not null,
     category_id integer not null,
     Primary Key(app_id, category_id)
+    foreign key (app_id) references apps (id) on delete cascade
+    foreign key (category_id) references categories (id)
 )`;
 
 const CREATE_KEY_BENEFITS_TABLE = `create table ${KEY_BENEFITS} (
@@ -41,6 +43,7 @@ const CREATE_KEY_BENEFITS_TABLE = `create table ${KEY_BENEFITS} (
     title text not null,
     description text not null,
     Primary Key(app_id, title)
+    foreign key(app_id) references apps (id)
 )`;
 
 const CREATE_PRICING_PLANS_TABLE = `create table ${PRICING_PLANS} (
@@ -51,7 +54,9 @@ const CREATE_PRICING_PLANS_TABLE = `create table ${PRICING_PLANS} (
 const CREATE_APPS_PRICING_PLANS_TABLE = `create table ${APPS_PRICING_PLANS} (
     app_id integer not null,
     pricing_plan_id integer not null, 
-    Primary Key(app_id, pricing_plan_id)
+    Primary Key(app_id, pricing_plan_id)    
+    foreign key (app_id) references apps (id) on delete cascade
+    foreign key (pricing_plan_id) references pricing_plans(id)
 )`;
 
 const CREATE_REVIEWS_TABLE = `create table ${REVIEWS} (
@@ -62,7 +67,8 @@ const CREATE_REVIEWS_TABLE = `create table ${REVIEWS} (
     helpful_count integer not null,
     date_created text not null,
     developer_reply text,
-    developer_reply_date text
+    developer_reply_date text,
+    foreign key (app_id) references apps (id)
 )`;
 
 const CREATE_INDEX_REVIEWS_AUTHOR = `create index reviews_author_idx on reviews (author)`;
