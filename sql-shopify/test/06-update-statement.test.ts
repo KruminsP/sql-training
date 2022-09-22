@@ -13,7 +13,9 @@ describe("Update Statements", () => {
 
     it("should update one app title by app id", async done => {
         const app = await db.selectSingleRow(selectRowById(200, APPS));
-        const query = `todo`;
+        const query = `update apps
+        set title = 'QUICK VIEW'
+        where id = ${app.id}`;
         try {
             await db.execute(query);
         } catch (e) { console.log(e); };
@@ -28,7 +30,10 @@ describe("Update Statements", () => {
     it("should update review developer reply and developer reply date by app id and author", async done => {
         const timeStamp = moment().format("YYYY-MM-DD hh:mm");
         const review = await db.selectSingleRow(selectReviewByAppIdAuthor(24, "PLAYBOY"));
-        const query = `todo`;
+        const query = `update reviews
+        set developer_reply = 'test reply', 
+        developer_reply_date = '${timeStamp}'
+        where app_id = ${review.app_id};`;
         try {
             await db.execute(query);
         } catch (e) { console.log(e); };
@@ -40,7 +45,8 @@ describe("Update Statements", () => {
     }, minutes(1));
 
     it("should update all categories to uppercase", async done => {
-        const query = `todo`;
+        const query = `update categories
+        set title = upper(title)`;
         try {
             await db.execute(query);
         } catch (e) { console.log(e); };
